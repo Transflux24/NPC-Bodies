@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadImoe","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADIMOE")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadImoe","GLOBAL",0)
+		TakePartyItem("DEADIMOE")
+		DestroyItem("DEADIMOE")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadImoe","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADIMOE")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Imoen",@1)
+		Kill("IMOEN_DV")
+		ActionOverride("IMOEN_DV",LeaveParty())
+		ActionOverride("IMOEN_DV",DestroySelf())
+		Continue()
+END

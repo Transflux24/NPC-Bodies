@@ -1,0 +1,343 @@
+@5001 = ~NPC Dead Bodies for BG:EE~
+@5002 = ~NPC Dead Bodies for Siege Of Dragonspear~
+@5003 = ~NPC Dead Bodies for BG2:EE~
+@5004 = ~NPC Dead Bodies for BG:EET~
+
+@4001 = ~Requires Seige of Dragonspear DLC~
+@4002 = ~Siege of Dragonspear DLC needs to be extracted using Modmerge~
+
+@6000 = ~Change price for Raise Dead~
+@6001 = ~Progressive~
+@6002 = ~Always 500~
+@6003 = ~Always 1000~
+
+@1=~Without the body, the spell failed.~
+
+@2=~This is the dead body of Ajantis Ilvastarr.
+
+STATISTICS:
+
+Weight: 148
+~
+
+@3=~This is the dead body of Alora.
+
+STATISTICS:
+
+Weight: 105
+~
+
+@4=~This is the dead body of Baeloth Barrityl.
+
+STATISTICS:
+
+Weight: 131
+~
+
+@5~This is the dead body of Branwen.
+
+STATISTICS:
+
+Weight: 122
+~
+
+@6=~This is the dead body of Coran.
+
+STATISTICS:
+
+Weight: 136
+~
+
+@7=~This is the dead body of Dorn Il-Khan.
+
+STATISTICS:
+
+Weight: 195
+~
+
+@8=~This is the dead body of Dynaheir.
+
+STATISTICS:
+
+Weight: 120
+~
+
+@9=~This is the dead body of Edwin Odesseiron.
+
+STATISTICS:
+
+Weight: 137
+~
+
+@10=~This is the dead body of Eldoth Kron.
+
+STATISTICS:
+
+Weight: 144
+~
+
+@11=~This is the dead body of Faldorn.
+
+STATISTICS:
+
+Weight: 115
+~
+
+@12=~This is the dead body of Garrick.
+
+STATISTICS:
+
+Weight: 136
+~
+
+@13=~This is the dead body of Imoen.
+
+STATISTICS:
+
+Weight: 121
+~
+
+@14=~This is the dead body of Jaheira.
+
+STATISTICS:
+
+Weight: 124
+~
+
+@15=~This is the dead body of Kagain.
+
+STATISTICS:
+
+Weight: 148
+~
+
+@16=~This is the dead body of Khalid.
+
+STATISTICS:
+
+Weight: 146
+~
+
+@17=~This is the dead body of Kivan.
+
+STATISTICS:
+
+Weight: 141
+~
+
+@18=~This is the dead body of Minsc.
+
+STATISTICS:
+
+Weight: 176
+~
+
+@19=~This is the dead body of Montaron.
+
+STATISTICS:
+
+Weight: 136
+~
+
+@20=~This is the dead body of Neera.
+
+STATISTICS:
+
+Weight: 116
+~
+
+@21=~This is the dead body of Quayle.
+
+STATISTICS:
+
+Weight: 116
+~
+
+@22=~This is the dead body of Rasaad yn Bashir.
+
+STATISTICS:
+
+Weight: 146
+~
+
+@23=~This is the dead body of Safana.
+
+STATISTICS:
+
+Weight: 116
+~
+
+@24=~This is the dead body of Shar-Teel Dosan.
+
+STATISTICS:
+
+Weight: 120
+~
+
+@25=~This is the dead body of Skie Silvershield.
+
+STATISTICS:
+
+Weight: 122
+~
+
+@26=~This is the dead body of Tiax.
+
+STATISTICS:
+
+Weight: 125
+~
+
+@27=~This is the dead body of Viconia DeVir.
+
+STATISTICS:
+
+Weight: 102
+~
+
+@28=~This is the dead body of Xan.
+
+STATISTICS:
+
+Weight: 123
+~
+
+@29=~This is the dead body of Xzar.
+
+STATISTICS:
+
+Weight: 137
+~
+
+@30=~This is the dead body of Yeslick Orothair.
+
+STATISTICS:
+
+Weight: 142
+~
+
+@31=~This is the dead body of Captain Schael Corwin.
+
+STATISTICS:
+
+Weight: 125
+~
+
+@32=~This is the dead body of Glint Gardnersonson.
+
+STATISTICS:
+
+Weight: 130
+~
+
+@33=~This is the dead body of M'Khiin Grubdoubler.
+
+STATISTICS:
+
+Weight: 92
+~
+
+@34=~This is the dead body of Voghiln the Mighty.
+
+STATISTICS:
+
+Weight: 152
+~
+
+@35=~This is the dead body of Aerie.
+
+STATISTICS:
+
+Weight: 105
+~
+
+@36=~This is the dead body of Anomen Selryn.
+
+STATISTICS:
+
+Weight: 147
+~
+
+@37=~This is the dead body of Cernd.
+
+STATISTICS:
+
+Weight: 135
+~
+
+@38=~This is the dead body of Haer'Dalis.
+
+STATISTICS:
+
+Weight: 128
+~
+
+@39=~This is the dead body of Hexxat.
+
+STATISTICS:
+
+Weight: 121
+~
+
+@40=~This is the dead body of Jan Jansen.
+
+STATISTICS:
+
+Weight: 124
+~
+
+@41=~This is the dead body of Keldorn Firecam.
+
+STATISTICS:
+
+Weight: 146
+~
+
+@42=~This is the dead body of Korgan Bloodaxe.
+
+STATISTICS:
+
+Weight: 153
+~
+
+@43=~This is the dead body of Mazzy Fentan.
+
+STATISTICS:
+
+Weight: 117
+~
+
+@44=~This is the dead body of Nalia da'Arnise.
+
+STATISTICS:
+
+Weight: 126
+~
+
+@45=~This is the dead body of Sarevok Anchev.
+
+STATISTICS:
+
+Weight: 180
+~
+
+@46=~This is the dead body of Valygar Corthala.
+
+STATISTICS:
+
+Weight: 152
+~
+
+@47=~This is the dead body of Wilson.
+
+STATISTICS:
+
+Weight: 262
+~
+
+@48=~This is the dead body of Yoshimo.
+
+STATISTICS:
+
+Weight: 152
+~
