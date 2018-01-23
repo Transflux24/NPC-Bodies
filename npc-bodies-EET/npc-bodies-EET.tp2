@@ -6,17 +6,6 @@ ALWAYS
 
 	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @4001 END // Modmerge check
 
-//    ACTION_IF FILE_EXISTS ~npc-bodies-EET/bodies.txt~ THEN BEGIN
-//      
-//      INCLUDE ~npc-bodies-EET/bodies.txt~ // config file
-//    
-//    END ELSE BEGIN
-//    
-//      OUTER_SET minimum_stats_use_config_values = 0
-//      OUTER_SET romance_use_config_values = 0
-//  
-//  END
-	
 BEGIN @5001
 
 ACTION_IF GAME_IS ~bgee~ BEGIN
@@ -596,6 +585,8 @@ END
 BEGIN @6002
 SUBCOMPONENT @6000 //Raise Dead Price
 
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+
 COPY ~npc-bodies-EET/common/500/2da/RAISDEAD.2DA~ ~override/RAISDEAD.2DA~
 
 END
@@ -603,6 +594,43 @@ END
 BEGIN @6003
 SUBCOMPONENT @6000 //Raise Dead Price
 
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+
 COPY ~npc-bodies-EET/common/1000/2da/RAISDEAD.2DA~ ~override/RAISDEAD.2DA~
+
+END
+
+BEGIN @5501
+SUBCOMPONENT @5500 //Required Spell Changes
+
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+
+COPY_EXISTING ~SPJA01.spl~ ~override~
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 309 STR_VAR resource = NPCRAISE
+
+COPY_EXISTING ~SPPR504.spl~ ~override~
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 309 STR_VAR resource = NPCRAISE
+
+COPY_EXISTING ~SPPR712.spl~ ~override~
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 309 STR_VAR resource = NPCRAISE
+
+END
+
+BEGIN @5502
+SUBCOMPONENT @5500 //Required Spell Changes
+
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+
+COPY_EXISTING ~SPJA01.spl~ ~override~
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 309 STR_VAR resource = NPCRAISE
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 10 target = 2 timing = 1
+
+COPY_EXISTING ~SPPR504.spl~ ~override~
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 309 STR_VAR resource = NPCRAISE
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 10 target = 2 timing = 1
+
+COPY_EXISTING ~SPPR712.spl~ ~override~
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 309 STR_VAR resource = NPCRAISE
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 10 target = 2 timing = 1
 
 END
