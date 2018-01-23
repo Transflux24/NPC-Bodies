@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadMins","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADMINS")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadMins","GLOBAL",0)
+		TakePartyItem("DEADMINS")
+		DestroyItem("DEADMINS")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadMins","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADMINS")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Minsc",@1)
+		Kill("Minsc")
+		ActionOverride("Minsc",LeaveParty())
+		ActionOverride("Minsc",DestroySelf())
+		Continue()
+END

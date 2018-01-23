@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadShar","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADSHAR")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadShar","GLOBAL",0)
+		TakePartyItem("DEADSHAR")
+		DestroyItem("DEADSHAR")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadShar","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADSHAR")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Sharteel",@1)
+		Kill("Sharteel")
+		ActionOverride("Sharteel",LeaveParty())
+		ActionOverride("Sharteel",DestroySelf())
+		Continue()
+END

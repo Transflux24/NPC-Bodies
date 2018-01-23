@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadTiax","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADTIAX")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadTiax","GLOBAL",0)
+		TakePartyItem("DEADTIAX")
+		DestroyItem("DEADTIAX")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadTiax","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADTIAX")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Tiax",@1)
+		Kill("Tiax")
+		ActionOverride("Tiax",LeaveParty())
+		ActionOverride("Tiax",DestroySelf())
+		Continue()
+END

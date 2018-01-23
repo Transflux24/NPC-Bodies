@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadKaga","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADKAGA")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadKaga","GLOBAL",0)
+		TakePartyItem("DEADKAGA")
+		DestroyItem("DEADKAGA")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadKaga","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADKAGA")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Kagain",@1)
+		Kill("Kagain")
+		ActionOverride("Kagain",LeaveParty())
+		ActionOverride("Kagain",DestroySelf())
+		Continue()
+END

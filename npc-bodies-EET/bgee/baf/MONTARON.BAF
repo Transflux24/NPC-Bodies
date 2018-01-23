@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadMont","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADMONT")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadMont","GLOBAL",0)
+		TakePartyItem("DEADMONT")
+		DestroyItem("DEADMONT")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadMont","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADMONT")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Montaron",@1)
+		Kill("Montaron")
+		ActionOverride("Montaron",LeaveParty())
+		ActionOverride("Montaron",DestroySelf())
+		Continue()
+END

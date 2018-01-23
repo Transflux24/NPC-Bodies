@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadQuay","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADQUAY")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadQuay","GLOBAL",0)
+		TakePartyItem("DEADQUAY")
+		DestroyItem("DEADQUAY")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadQuay","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADQUAY")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Quayle",@1)
+		Kill("Quayle")
+		ActionOverride("Quayle",LeaveParty())
+		ActionOverride("Quayle",DestroySelf())
+		Continue()
+END

@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadEldo","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADELDO")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadEldo","GLOBAL",0)
+		TakePartyItem("DEADELDO")
+		DestroyItem("DEADELDO")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadEldo","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADELDO")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Eldoth",@1)
+		Kill("Eldoth")
+		ActionOverride("Eldoth",LeaveParty())
+		ActionOverride("Eldoth",DestroySelf())
+		Continue()
+END

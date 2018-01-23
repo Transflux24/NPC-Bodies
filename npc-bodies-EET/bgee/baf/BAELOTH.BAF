@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadBael","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADBAEL")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadBael","GLOBAL",0)
+		TakePartyItem("DEADBAEL")
+		DestroyItem("DEADBAEL")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadBael","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADBAEL")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Baeloth",@1)
+		Kill("Baeloth")
+		ActionOverride("Baeloth",LeaveParty())
+		ActionOverride("Baeloth",DestroySelf())
+		Continue()
+END

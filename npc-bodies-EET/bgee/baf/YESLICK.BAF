@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadYesl","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADYESL")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadYesl","GLOBAL",0)
+		TakePartyItem("DEADYESL")
+		DestroyItem("DEADYESL")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadYesl","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADYESL")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Yeslick",@1)
+		Kill("Yeslick")
+		ActionOverride("Yeslick",LeaveParty())
+		ActionOverride("Yeslick",DestroySelf())
+		Continue()
+END

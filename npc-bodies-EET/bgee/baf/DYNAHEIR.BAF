@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadDyna","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADDYNA")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadDyna","GLOBAL",0)
+		TakePartyItem("DEADDYNA")
+		DestroyItem("DEADDYNA")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadDyna","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADDYNA")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Dynaheir",@1)
+		Kill("Dynaheir")
+		ActionOverride("Dynaheir",LeaveParty())
+		ActionOverride("Dynaheir",DestroySelf())
+		Continue()
+END
