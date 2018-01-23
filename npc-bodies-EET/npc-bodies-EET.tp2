@@ -6,7 +6,7 @@ ALWAYS
 
 	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @4001 END // Modmerge check
 
-BEGIN @5001
+BEGIN @5001 DESIGNATED 1
 
 ACTION_IF GAME_IS ~bgee~ BEGIN
 
