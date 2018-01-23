@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadKorg","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADKORG")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadKorg","GLOBAL",0)
+		TakePartyItem("DEADKORG")
+		DestroyItem("DEADKORG")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadKorg","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADKORG")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Korgan",@1)
+		Kill("Korgan")
+		ActionOverride("Korgan",LeaveParty())
+		ActionOverride("Korgan",DestroySelf())
+		Continue()
+END

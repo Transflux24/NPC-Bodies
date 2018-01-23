@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadMazz","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADMAZZ")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadMazz","GLOBAL",0)
+		TakePartyItem("DEADMAZZ")
+		DestroyItem("DEADMAZZ")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadMazz","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADMAZZ")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Mazzy",@1)
+		Kill("Mazzy")
+		ActionOverride("Mazzy",LeaveParty())
+		ActionOverride("Mazzy",DestroySelf())
+		Continue()
+END

@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadHaer","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADHAER")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadHaer","GLOBAL",0)
+		TakePartyItem("DEADHAER")
+		DestroyItem("DEADHAER")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadHaer","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADHAER")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("HaerDalis",@1)
+		Kill("HaerDalis")
+		ActionOverride("HaerDalis",LeaveParty())
+		ActionOverride("HaerDalis",DestroySelf())
+		Continue()
+END

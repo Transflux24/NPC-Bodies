@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadHexx","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADHEXX")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadHexx","GLOBAL",0)
+		TakePartyItem("DEADHEXX")
+		DestroyItem("DEADHEXX")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadHexx","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADHEXX")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Hexxat",@1)
+		Kill("Hexxat")
+		ActionOverride("Hexxat",LeaveParty())
+		ActionOverride("Hexxat",DestroySelf())
+		Continue()
+END

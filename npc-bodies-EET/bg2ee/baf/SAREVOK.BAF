@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadSare","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADSARE")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadSare","GLOBAL",0)
+		TakePartyItem("DEADSARE")
+		DestroyItem("DEADSARE")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadSare","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADSARE")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Sarevok",@1)
+		Kill("Sarevok")
+		ActionOverride("Sarevok",LeaveParty())
+		ActionOverride("Sarevok",DestroySelf())
+		Continue()
+END

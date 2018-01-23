@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadValy","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADVALY")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadValy","GLOBAL",0)
+		TakePartyItem("DEADVALY")
+		DestroyItem("DEADVALY")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadValy","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADVALY")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Valygar",@1)
+		Kill("Valygar")
+		ActionOverride("Valygar",LeaveParty())
+		ActionOverride("Valygar",DestroySelf())
+		Continue()
+END

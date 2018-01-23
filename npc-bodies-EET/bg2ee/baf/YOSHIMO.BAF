@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadYosh","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADYOSH")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadYosh","GLOBAL",0)
+		TakePartyItem("DEADYOSH")
+		DestroyItem("DEADYOSH")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadYosh","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADYOSH")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Yoshimo",@1)
+		Kill("Yoshimo")
+		ActionOverride("Yoshimo",LeaveParty())
+		ActionOverride("Yoshimo",DestroySelf())
+		Continue()
+END
