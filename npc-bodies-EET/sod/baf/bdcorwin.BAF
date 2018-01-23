@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadCorw","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADCORW")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadCorw","GLOBAL",0)
+		TakePartyItem("DEADCORW")
+		DestroyItem("DEADCORW")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadCorw","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADCORW")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Corwin",@1)
+		Kill("Corwin")
+		ActionOverride("Corwin",LeaveParty())
+		ActionOverride("Corwin",DestroySelf())
+		Continue()
+END

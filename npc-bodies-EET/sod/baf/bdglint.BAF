@@ -1,0 +1,26 @@
+IF
+    GLOBAL("DeadGlin","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	PartyHasItem("DEADGLIN")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		SetGlobal("DeadGlin","GLOBAL",0)
+		TakePartyItem("DEADGLIN")
+		DestroyItem("DEADGLIN")
+		Continue()
+END
+
+IF
+    GLOBAL("DeadGlin","GLOBAL",1)
+	Global("NPCRAISE","LOCALS",1)
+	!PartyHasItem("DEADGLIN")
+THEN
+	RESPONSE #100
+		SetGlobal("NPCRAISE","LOCALS",0)
+		DisplayString("Glint",@1)
+		Kill("Glint")
+		ActionOverride("Glint",LeaveParty())
+		ActionOverride("Glint",DestroySelf())
+		Continue()
+END

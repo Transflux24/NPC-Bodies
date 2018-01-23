@@ -1,0 +1,51 @@
+IF
+	Global("DeadCorw","GLOBAL",0)
+	Dead("Corwin")
+THEN
+	RESPONSE #100
+		SetGlobal("DeadCorw","GLOBAL",1)
+		SaveObjectLocation("GLOBAL","CorpseLocation","Corwin")
+		CreateCreatureAtLocation("CorpseLocation","GLOBAL","BODYDROP")
+		ActionOverride("BODYDROP",CreateItem("DEADCORW",0,0,0))
+		ActionOverride("BODYDROP",DropItem("DEADCORW",[-1.-1]))
+		ActionOverride("BODYDROP",DestroySelf())
+END
+
+IF
+	Global("DeadGlin","GLOBAL",0)
+	Dead("Glint")
+THEN
+	RESPONSE #100
+		SetGlobal("DeadGlin","GLOBAL",1)
+		SaveObjectLocation("GLOBAL","CorpseLocation","Glint")
+		CreateCreatureAtLocation("CorpseLocation","GLOBAL","BODYDROP")
+		ActionOverride("BODYDROP",CreateItem("DEADGLIN",0,0,0))
+		ActionOverride("BODYDROP",DropItem("DEADGLIN",[-1.-1]))
+		ActionOverride("BODYDROP",DestroySelf())
+END
+
+IF
+	Global("DeadMkhi","GLOBAL",0)
+	Dead("Mkhiin")
+THEN
+	RESPONSE #100
+		SetGlobal("DeadMkhi","GLOBAL",1)
+		SaveObjectLocation("GLOBAL","CorpseLocation","Mkhiin")
+		CreateCreatureAtLocation("CorpseLocation","GLOBAL","BODYDROP")
+		ActionOverride("BODYDROP",CreateItem("DEADMKHI",0,0,0))
+		ActionOverride("BODYDROP",DropItem("DEADMKHI",[-1.-1]))
+		ActionOverride("BODYDROP",DestroySelf())
+END
+
+IF
+	Global("DeadVogh","GLOBAL",0)
+	Dead("Voghiln")
+THEN
+	RESPONSE #100
+		SetGlobal("DeadVogh","GLOBAL",1)
+		SaveObjectLocation("GLOBAL","CorpseLocation","Voghiln")
+		CreateCreatureAtLocation("CorpseLocation","GLOBAL","BODYDROP")
+		ActionOverride("BODYDROP",CreateItem("DEADVOGH",0,0,0))
+		ActionOverride("BODYDROP",DropItem("DEADVOGH",[-1.-1]))
+		ActionOverride("BODYDROP",DestroySelf())
+END
