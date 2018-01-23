@@ -1,10 +1,14 @@
+@4001 = ~Requires Seige of Dragonspear DLC~
+@4002 = ~Siege of Dragonspear DLC needs to be extracted using Modmerge~
+
 @5001 = ~NPC Dead Bodies for BG:EE~
 @5002 = ~NPC Dead Bodies for Siege Of Dragonspear~
 @5003 = ~NPC Dead Bodies for BG2:EE~
 @5004 = ~NPC Dead Bodies for BG:EET~
 
-@4001 = ~Requires Seige of Dragonspear DLC~
-@4002 = ~Siege of Dragonspear DLC needs to be extracted using Modmerge~
+@5500 = ~Required Spell Changes~
+@5501 = ~PnP CON Penalty on Resurrection~
+@5502 = ~No CON Penalty on Resurrection~
 
 @6000 = ~Change price for Raise Dead~
 @6001 = ~Progressive~
