@@ -1,16 +1,17 @@
 BACKUP ~npc-bodies-EET/backup~
 AUTHOR ~~
+VERSION ~v0.1~
 LANGUAGE ~English~ 
 		 ~en_US~ 
 		 ~npc-bodies-EET/common/english/english.tra~
 
 ALWAYS
 
-	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @4002 END // Modmerge check
+	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @4002 END
 
 BEGIN @5001
 
-ACTION_IF GAME_IS ~bgee~ BEGIN
+REQUIRE_PREDICATE GAME_IS ~bgee~ @4003
 
 COPY ~npc-bodies-EET/common/cre/BODYDROP.CRE~ ~override/BODYDROP.CRE~
 
@@ -165,8 +166,8 @@ END
 
 BEGIN @5002
 
-ACTION_IF GAME_IS ~bgee~ BEGIN
-REQUIRE_PREDICATE NOT FILE_EXISTS         ~sod-dlc/SoDAreas.bif~ @4000
+REQUIRE_PREDICATE GAME_IS ~bgee~ @4003
+REQUIRE_PREDICATE NOT FILE_EXISTS ~sod-dlc/SoDAreas.bif~ @4001
 
 COPY ~npc-bodies-EET/SoD/itm/DEADCORW.ITM~ ~override/DEADCORW.ITM~
   SAY UNIDENTIFIED_DESC @31
@@ -192,7 +193,7 @@ EXTEND_BOTTOM ~bddynahe.BCS~ ~npc-bodies-EET/bgee/baf/DYNAHEIR.BAF~
 EXTEND_BOTTOM ~bdedwin.BCS~ ~npc-bodies-EET/bgee/baf/EDWIN.BAF~
 EXTEND_BOTTOM ~bdglint.BCS~ ~npc-bodies-EET/sod/baf/bdglint.BAF~
 EXTEND_BOTTOM ~bdjaheir.BCS~ ~npc-bodies-EET/bgee/baf/JAHEIRA.BAF~
-EXTEND_BOTTOM ~bdkalid.BCS~ ~npc-bodies-EET/bgee/baf/KHALID.BAF~
+EXTEND_BOTTOM ~bdkhalid.BCS~ ~npc-bodies-EET/bgee/baf/KHALID.BAF~
 EXTEND_BOTTOM ~bdminsc.BCS~ ~npc-bodies-EET/bgee/baf/MINSC.BAF~
 EXTEND_BOTTOM ~BDMKHIIN.BCS~ ~npc-bodies-EET/sod/baf/BDMKHIIN.BAF~
 EXTEND_BOTTOM ~bdneera.BCS~ ~npc-bodies-EET/bgee/baf/NEERA.BAF~
@@ -205,7 +206,7 @@ END
 
 BEGIN @5003
 
-ACTION_IF GAME_IS ~bg2ee~ BEGIN
+REQUIRE_PREDICATE GAME_IS ~bg2ee~ @4003
 
 COPY ~npc-bodies-EET/bg2ee/itm/DEADAERI.ITM~ ~override/DEADAERI.ITM~
   SAY UNIDENTIFIED_DESC @35
@@ -323,7 +324,7 @@ END
 
 BEGIN @5004
 
-ACTION_IF GAME_IS ~eet~ BEGIN
+REQUIRE_PREDICATE GAME_IS ~eet~ @4003
 
 COPY ~npc-bodies-EET/common/cre/BODYDROP.CRE~ ~override/BODYDROP.CRE~
 
@@ -517,56 +518,64 @@ COPY ~npc-bodies-EET/bg2ee/itm/DEADYOSH.ITM~ ~override/DEADYOSH.ITM~
 
 EXTEND_BOTTOM ~BALDUR.BCS~ ~npc-bodies-EET/bgeet/baf/BALDUR.BAF~
 EXTEND_BOTTOM ~AERIE.BCS~ ~npc-bodies-EET/bg2ee/baf/AERIE.BAF~
-EXTEND_BOTTOM ~AJANTIS_BCS.BCS~ ~npc-bodies-EET/bgee/baf/AJANTIS.BAF~
-EXTEND_BOTTOM ~ALORA_BCS.BCS~ ~npc-bodies-EET/bgee/baf/ALORA.BAF~
+EXTEND_BOTTOM ~AJANTIS.BCS.BCS~ ~npc-bodies-EET/bgee/baf/AJANTIS.BAF~
+EXTEND_BOTTOM ~ALORA.BCS~ ~npc-bodies-EET/bgee/baf/ALORA.BAF~
 EXTEND_BOTTOM ~ANOMEN.BCS~ ~npc-bodies-EET/bg2ee/baf/ANOMEN.BAF~
 EXTEND_BOTTOM ~BAELOTH.BCS~ ~npc-bodies-EET/bgee/baf/BAELOTH.BAF~
-EXTEND_BOTTOM ~BRANWEN_BCS.BCS~ ~npc-bodies-EET/bgee/baf/BRANWEN.BAF~
+EXTEND_BOTTOM ~BRANWEN_.BCS.BCS~ ~npc-bodies-EET/bgee/baf/BRANWEN.BAF~
 EXTEND_BOTTOM ~CERND.BCS~ ~npc-bodies-EET/bg2ee/baf/CERND.BAF~
-EXTEND_BOTTOM ~CORAN_BCS.BCS~ ~npc-bodies-EET/bgee/baf/CORAN.BAF~
-EXTEND_BOTTOM ~DORN_BCS.BCS~ ~npc-bodies-EET/bgee/baf/DORN.BAF~
-EXTEND_BOTTOM ~DYNAHEIR_BCS.BCS~ ~npc-bodies-EET/bgee/baf/DYNAHEIR.BAF~
-EXTEND_BOTTOM ~EDWIN_BCS.BCS~ ~npc-bodies-EET/bgee/baf/EDWIN.BAF~
-EXTEND_BOTTOM ~ELDOTH_BCS.BCS~ ~npc-bodies-EET/bgee/baf/ELDOTH.BAF~
-EXTEND_BOTTOM ~FALDORN_BCS.BCS~ ~npc-bodies-EET/bgee/baf/FALDORN.BAF~
-EXTEND_BOTTOM ~GARRICK_BCS.BCS~ ~npc-bodies-EET/bgee/baf/GARRICK.BAF~
+EXTEND_BOTTOM ~CORAN.BCS~ ~npc-bodies-EET/bgee/baf/CORAN.BAF~
+EXTEND_BOTTOM ~DORN_.BCS~ ~npc-bodies-EET/bgee/baf/DORN.BAF~
+EXTEND_BOTTOM ~DORN.BCS~ ~npc-bodies-EET/bgee/baf/DORN.BAF~
+EXTEND_BOTTOM ~DYNAHEIR.BCS~ ~npc-bodies-EET/bgee/baf/DYNAHEIR.BAF~
+EXTEND_BOTTOM ~EDWIN_.BCS~ ~npc-bodies-EET/bgee/baf/EDWIN.BAF~
+EXTEND_BOTTOM ~EDWIN.BCS~ ~npc-bodies-EET/bgee/baf/EDWIN.BAF~
+EXTEND_BOTTOM ~ELDOTH.BCS~ ~npc-bodies-EET/bgee/baf/ELDOTH.BAF~
+EXTEND_BOTTOM ~FALDORN_.BCS~ ~npc-bodies-EET/bgee/baf/FALDORN.BAF~
+EXTEND_BOTTOM ~GARRICK_.BCS~ ~npc-bodies-EET/bgee/baf/GARRICK.BAF~
 EXTEND_BOTTOM ~HAERDALI.BCS~ ~npc-bodies-EET/bg2ee/baf/HAERDALI.BAF~
 EXTEND_BOTTOM ~HEXXAT.BCS~ ~npc-bodies-EET/bg2ee/baf/HEXXAT.BAF~
-EXTEND_BOTTOM ~IMOEN_BCS.BCS~ ~npc-bodies-EET/bgeet/baf/IMOEN.BAF~
-EXTEND_BOTTOM ~JAHEIRA_BCS.BCS~ ~npc-bodies-EET/bgee/baf/JAHEIRA.BAF~
+EXTEND_BOTTOM ~IMOEN_.BCS~ ~npc-bodies-EET/bgeet/baf/IMOEN.BAF~
+EXTEND_BOTTOM ~IMOEN.BCS~ ~npc-bodies-EET/bgeet/baf/IMOEN.BAF~
+EXTEND_BOTTOM ~JAHEIRA_.BCS~ ~npc-bodies-EET/bgee/baf/JAHEIRA.BAF~
+EXTEND_BOTTOM ~JAHEIRA.BCS~ ~npc-bodies-EET/bgee/baf/JAHEIRA.BAF~
 EXTEND_BOTTOM ~JAN.BCS~ ~npc-bodies-EET/bg2ee/baf/JAN.BAF~
-EXTEND_BOTTOM ~KAGAIN_BCS.BCS~ ~npc-bodies-EET/bgee/baf/KAGAIN.BAF~
+EXTEND_BOTTOM ~KAGAIN.BCS~ ~npc-bodies-EET/bgee/baf/KAGAIN.BAF~
 EXTEND_BOTTOM ~KELDORN.BCS~ ~npc-bodies-EET/bg2ee/baf/KELDORN.BAF~
-EXTEND_BOTTOM ~KHALID_BCS.BCS~ ~npc-bodies-EET/bgee/baf/KHALID.BAF~
-EXTEND_BOTTOM ~KIVAN_BCS.BCS~ ~npc-bodies-EET/bgee/baf/KIVAN.BAF~
+EXTEND_BOTTOM ~KHALID.BCS~ ~npc-bodies-EET/bgee/baf/KHALID.BAF~
+EXTEND_BOTTOM ~KIVAN.BCS~ ~npc-bodies-EET/bgee/baf/KIVAN.BAF~
 EXTEND_BOTTOM ~KORGAN.BCS~ ~npc-bodies-EET/bg2ee/baf/KORGAN.BAF~
 EXTEND_BOTTOM ~MAZZY.BCS~ ~npc-bodies-EET/bg2ee/baf/MAZZY.BAF~
-EXTEND_BOTTOM ~MINSC_BCS.BCS~ ~npc-bodies-EET/bgee/baf/MINSC.BAF~
-EXTEND_BOTTOM ~MONTARON_BCS.BCS~ ~npc-bodies-EET/bgee/baf/MONTARON.BAF~
+EXTEND_BOTTOM ~MINSC_.BCS~ ~npc-bodies-EET/bgee/baf/MINSC.BAF~
+EXTEND_BOTTOM ~MINSC.BCS~ ~npc-bodies-EET/bgee/baf/MINSC.BAF~
+EXTEND_BOTTOM ~MONTARON.BCS~ ~npc-bodies-EET/bgee/baf/MONTARON.BAF~
 EXTEND_BOTTOM ~NALIA.BCS~ ~npc-bodies-EET/bg2ee/baf/NALIA.BAF~
-EXTEND_BOTTOM ~neera_BCS.BCS~ ~npc-bodies-EET/bgee/baf/neera.BAF~
-EXTEND_BOTTOM ~QUAYLE_BCS.BCS~ ~npc-bodies-EET/bgee/baf/QUAYLE.BAF~
-EXTEND_BOTTOM ~rasaad_BCS.BCS~ ~npc-bodies-EET/bgee/baf/rasaad.BAF~
-EXTEND_BOTTOM ~SAFANA_BCS.BCS~ ~npc-bodies-EET/bgee/baf/SAFANA.BAF~
+EXTEND_BOTTOM ~neera_.BCS~ ~npc-bodies-EET/bgee/baf/neera.BAF~
+EXTEND_BOTTOM ~neera.BCS~ ~npc-bodies-EET/bgee/baf/neera.BAF~
+EXTEND_BOTTOM ~QUAYLE.BCS~ ~npc-bodies-EET/bgee/baf/QUAYLE.BAF~
+EXTEND_BOTTOM ~rasaad.BCS~ ~npc-bodies-EET/bgee/baf/rasaad.BAF~
+EXTEND_BOTTOM ~rasaad_.BCS~ ~npc-bodies-EET/bgee/baf/rasaad.BAF~
+EXTEND_BOTTOM ~SAFANA.BCS~ ~npc-bodies-EET/bgee/baf/SAFANA.BAF~
 EXTEND_BOTTOM ~SAREVOK.BCS~ ~npc-bodies-EET/bg2ee/baf/SAREVOK.BAF~
-EXTEND_BOTTOM ~SHARTEEL_BCS.BCS~ ~npc-bodies-EET/bgee/baf/SHARTEEL.BAF~
-EXTEND_BOTTOM ~SKIE_BCS.BCS~ ~npc-bodies-EET/bgee/baf/SKIE.BAF~
-EXTEND_BOTTOM ~TIAX_BCS.BCS~ ~npc-bodies-EET/bgee/baf/TIAX.BAF~
+EXTEND_BOTTOM ~SHARTEEL.BCS~ ~npc-bodies-EET/bgee/baf/SHARTEEL.BAF~
+EXTEND_BOTTOM ~SKIE_.BCS~ ~npc-bodies-EET/bgee/baf/SKIE.BAF~
+EXTEND_BOTTOM ~TIAX.BCS~ ~npc-bodies-EET/bgee/baf/TIAX.BAF~
 EXTEND_BOTTOM ~VALYGAR.BCS~ ~npc-bodies-EET/bg2ee/baf/VALYGAR.BAF~
-EXTEND_BOTTOM ~VICONIA_BCS.BCS~ ~npc-bodies-EET/bgee/baf/VICONIA.BAF~
+EXTEND_BOTTOM ~VICONIA_.BCS~ ~npc-bodies-EET/bgee/baf/VICONIA.BAF~
+EXTEND_BOTTOM ~VICONIA.BCS~ ~npc-bodies-EET/bgee/baf/VICONIA.BAF~
 EXTEND_BOTTOM ~wilson.BCS~ ~npc-bodies-EET/bg2ee/baf/wilson.BAF~
-EXTEND_BOTTOM ~XAN_BCS.BCS~ ~npc-bodies-EET/bgee/baf/XAN.BAF~
-EXTEND_BOTTOM ~XZAR_BCS.BCS~ ~npc-bodies-EET/bgee/baf/XZAR.BAF~
-EXTEND_BOTTOM ~YESLICK_BCS.BCS~ ~npc-bodies-EET/bgee/baf/YESLICK.BAF~
+EXTEND_BOTTOM ~XAN.BCS~ ~npc-bodies-EET/bgee/baf/XAN.BAF~
+EXTEND_BOTTOM ~XZAR.BCS~ ~npc-bodies-EET/bgee/baf/XZAR.BAF~
+EXTEND_BOTTOM ~YESLICK.BCS~ ~npc-bodies-EET/bgee/baf/YESLICK.BAF~
 EXTEND_BOTTOM ~YOSHIMO.BCS~ ~npc-bodies-EET/bg2ee/baf/YOSHIMO.BAF~
-EXTEND_BOTTOM ~BDBAELOTH.BCS~ ~npc-bodies-EET/bgee/baf/BAELOTH.BAF~
+EXTEND_BOTTOM ~BDBAELOT.BCS~ ~npc-bodies-EET/bgee/baf/BAELOTH.BAF~
 EXTEND_BOTTOM ~bdcorwin.BCS~ ~npc-bodies-EET/sod/baf/bdcorwin.BAF~
 EXTEND_BOTTOM ~bddorn.BCS~ ~npc-bodies-EET/bgee/baf/DORN.BAF~
 EXTEND_BOTTOM ~bddynahe.BCS~ ~npc-bodies-EET/bgee/baf/DYNAHEIR.BAF~
 EXTEND_BOTTOM ~bdedwin.BCS~ ~npc-bodies-EET/bgee/baf/EDWIN.BAF~
 EXTEND_BOTTOM ~bdglint.BCS~ ~npc-bodies-EET/sod/baf/bdglint.BAF~
 EXTEND_BOTTOM ~bdjaheir.BCS~ ~npc-bodies-EET/bgee/baf/JAHEIRA.BAF~
-EXTEND_BOTTOM ~bdkalid.BCS~ ~npc-bodies-EET/bgee/baf/KHALID.BAF~
+EXTEND_BOTTOM ~bdkhalid.BCS~ ~npc-bodies-EET/bgee/baf/KHALID.BAF~
 EXTEND_BOTTOM ~bdminsc.BCS~ ~npc-bodies-EET/bgee/baf/MINSC.BAF~
 EXTEND_BOTTOM ~BDMKHIIN.BCS~ ~npc-bodies-EET/sod/baf/BDMKHIIN.BAF~
 EXTEND_BOTTOM ~bdneera.BCS~ ~npc-bodies-EET/bgee/baf/NEERA.BAF~
@@ -578,7 +587,7 @@ EXTEND_BOTTOM ~bdvoghil.BCS~ ~npc-bodies-EET/sod/baf/bdvoghil.BAF~
 BEGIN @6001
 SUBCOMPONENT @6000 //Raise Dead Price
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @4003
 
 COPY ~npc-bodies-EET/common/prog/2da/RAISDEAD.2DA~ ~override/RAISDEAD.2DA~
 
@@ -587,7 +596,7 @@ END
 BEGIN @6002
 SUBCOMPONENT @6000 //Raise Dead Price
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @4003
 
 COPY ~npc-bodies-EET/common/500/2da/RAISDEAD.2DA~ ~override/RAISDEAD.2DA~
 
@@ -596,7 +605,7 @@ END
 BEGIN @6003
 SUBCOMPONENT @6000 //Raise Dead Price
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @4003
 
 COPY ~npc-bodies-EET/common/1000/2da/RAISDEAD.2DA~ ~override/RAISDEAD.2DA~
 
@@ -605,7 +614,7 @@ END
 BEGIN @5501
 SUBCOMPONENT @5500 //Required Spell Changes
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @4003
 
 COPY_EXISTING ~SPJA01.spl~ ~override~
  LPF ADD_SPELL_EFFECT INT_VAR opcode = 309 STR_VAR resource = NPCRAISE
@@ -621,7 +630,7 @@ END
 BEGIN @5502
 SUBCOMPONENT @5500 //Required Spell Changes
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @4003
 
 COPY_EXISTING ~SPJA01.spl~ ~override~
  LPF ADD_SPELL_EFFECT INT_VAR opcode = 309 STR_VAR resource = NPCRAISE
