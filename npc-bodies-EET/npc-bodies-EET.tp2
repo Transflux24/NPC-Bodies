@@ -1,6 +1,8 @@
 BACKUP ~npc-bodies-EET/backup~
 AUTHOR ~~
-LANGUAGE ~English~ ~npc-bodies-EET/common/english~ ~npc-bodies-EET/common/english/english.tra~
+LANGUAGE ~English~ 
+		 ~en_US~ 
+		 ~npc-bodies-EET/common/english/english.tra~
 
 ALWAYS
 
